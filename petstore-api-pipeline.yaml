@@ -134,8 +134,8 @@ Resources:
             Resource:
             - Fn::Sub: arn:aws:s3:::${AWS::StackName}-codepipeline-artifact-bucket-${AWS::AccountId}/*
             - Fn::Sub: arn:aws:s3:::${AWS::StackName}-codepipeline-artifact-bucket-${AWS::AccountId}
-            - Fn::Sub: arn:aws:s3:::${BucketRoot}/*
-            - Fn::Sub: arn:aws:s3:::${BucketRoot}
+            - Fn::Sub: arn:aws:s3:::postman2/*
+            - Fn::Sub: arn:aws:s3:::postman2
           -
             Effect: "Allow"
             Action:
@@ -269,11 +269,11 @@ Resources:
             Version: 1
             Provider: GitHub
           Configuration:
-            Owner: !Ref GitHubUser
+            Owner: Benyamin-Rafaeli
             PollForSourceChanges: false
-            Repo: !Ref GitHubRepositoryName
-            Branch: !Ref GitHubBranch
-            OAuthToken: !Ref GitHubToken
+            Repo: aws-codepipeline-codebuild-with-postman
+            Branch: master
+            OAuthToken: dff8f96af94581fd0a895895f9d6dcba4c3e52f8
           InputArtifacts: []
           OutputArtifacts:
           - Name: 'PetStoreAPI-SourceArtifact'
@@ -377,8 +377,10 @@ Resources:
             - s3:PutObjectAcl
             - s3:GetObject
             - s3:GetObjectVersion
-            Resource:
-            - Fn::Sub: arn:aws:s3:::${BucketRoot}/*
+            Resource:   
+            # arn:aws:s3:::postman2
+            # arn:aws:s3:::${postman2}/*
+            - Fn::Sub: arn:aws:s3:::postman2
           -
             Effect: Allow
             Action:

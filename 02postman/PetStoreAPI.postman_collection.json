@@ -1,112 +1,17 @@
 {
 	"info": {
-		"_postman_id": "ad0e9a8e-294e-48fc-83e4-77a1a95ec494",
-		"name": "KabAPI",
+		"_postman_id": "c757b66a-6f50-4ba2-9d3f-aaece4bd09a4",
+		"name": "PetStoreAPI",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
-		{
-			"name": "GetContentUnits_ VIDEO_PROGRAM_CHAPTER",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "8f30b7d2-90d8-43ee-884c-5c0be7f99435",
-						"exec": [
-							"pm.test(\"Is valid response with json array in body\", () => {",
-							"    pm.response.to.be.ok;",
-							"    pm.response.to.be.withBody;",
-							"    pm.response.to.be.json;",
-							"    pm.expect(pm.response.json()).to.be.an('object').but.not.an('array');",
-							"});",
-							"",
-							"pm.test(\"Has Content-Type header\", () => pm.expect(responseHeaders.hasOwnProperty(\"Content-Type\")));",
-							"",
-							"pm.test(\"Is response time is less than 500ms\", () => pm.expect(pm.response.responseTime).to.be.below(500));",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "authority",
-						"value": "kabbalahmedia.info"
-					},
-					{
-						"key": "pragma",
-						"value": "no-cache"
-					},
-					{
-						"key": "cache-control",
-						"value": "no-cache"
-					},
-					{
-						"key": "accept",
-						"value": "application/json, text/plain, */*"
-					},
-					{
-						"key": "user-agent",
-						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36"
-					},
-					{
-						"key": "sec-fetch-site",
-						"value": "same-origin"
-					},
-					{
-						"key": "sec-fetch-mode",
-						"value": "cors"
-					},
-					{
-						"key": "sec-fetch-dest",
-						"value": "empty"
-					},
-					{
-						"key": "referer",
-						"value": "https://kabbalahmedia.info/en/programs"
-					},
-					{
-						"key": "accept-language",
-						"value": "en-US,en;q=0.9,he-IL;q=0.8,he;q=0.7,ru;q=0.6,uk;q=0.5"
-					},
-					{
-						"key": "cookie",
-						"value": "archive_ContentLang=he; archive_UIlang=en"
-					},
-					{
-						"key": "dnt",
-						"value": "1"
-					}
-				],
-				"url": {
-					"raw": "{{url}}/backend/content_units?content_type=VIDEO_PROGRAM_CHAPTER",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"backend",
-						"content_units"
-					],
-					"query": [
-						{
-							"key": "content_type",
-							"value": "VIDEO_PROGRAM_CHAPTER"
-						}
-					]
-				}
-			},
-			"response": []
-		},
 		{
 			"name": "GetContentUnits_PUBLICATION",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "0f8e062b-f4c1-4a76-82c1-1c7bb03a9aab",
+						"id": "dc35f6c6-139f-4f6f-9512-012d0de0a05a",
 						"exec": [
 							"pm.test(\"Is valid response with json array in body\", () => {",
 							"    pm.response.to.be.ok;",
@@ -196,12 +101,107 @@
 			"response": []
 		},
 		{
+			"name": "GetContentUnits_VIDEO_PROGRAM_CHAPTER",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d812a891-908e-4348-99ee-dc38632c1d2c",
+						"exec": [
+							"pm.test(\"Is valid response with json array in body\", () => {",
+							"    pm.response.to.be.ok;",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"    pm.expect(pm.response.json()).to.be.an('object').but.not.an('array');",
+							"});",
+							"",
+							"pm.test(\"Has Content-Type header\", () => pm.expect(responseHeaders.hasOwnProperty(\"Content-Type\")));",
+							"",
+							"pm.test(\"Is response time is less than 500ms\", () => pm.expect(pm.response.responseTime).to.be.below(500));",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authority",
+						"value": "kabbalahmedia.info"
+					},
+					{
+						"key": "pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache"
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "referer",
+						"value": "https://kabbalahmedia.info/en/programs"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9,he-IL;q=0.8,he;q=0.7,ru;q=0.6,uk;q=0.5"
+					},
+					{
+						"key": "cookie",
+						"value": "archive_ContentLang=he; archive_UIlang=en"
+					},
+					{
+						"key": "dnt",
+						"value": "1"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/backend/content_units?content_type=VIDEO_PROGRAM_CHAPTER",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"backend",
+						"content_units"
+					],
+					"query": [
+						{
+							"key": "content_type",
+							"value": "VIDEO_PROGRAM_CHAPTER"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "GetContentUnits_LESSON_PART",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "210bc9b9-3152-49f7-8834-c809c0fa8275",
+						"id": "a4d10d8b-2250-4cd3-a691-99a0d38ae892",
 						"exec": [
 							"pm.test(\"Is valid response with json array in body\", () => {",
 							"    pm.response.to.be.ok;",
